@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fanzone - Prison Break</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  
+
+</head>
+<body>
+    <body class="fanzone">
+
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="personnages.html">Personnages</a>
+    <a href="saisons.html">Saisons</a>
+   <a href="fanzone.html">Fanzone/Contact</a>
+</nav>
+
+
+ 
+  <h2>🗣️ Citations cultes</h2>
+<p>"Je n’ai pas le temps d’échouer." – Michael Scofield</p>
+<p>"This is not about justice. This is about survival." – Lincoln Burrows</p>
+<p>"J'avais tout prévu. Tout... sauf toi." - Michael Scofield</p>
+<p>Tu ne peux pas enfermer le diable. - T-Bag</p>
+<p>T’es pas le seul à avoir un cerveau, Michael. - Alexander Mahone</p>
+
+
+<h2>🎥Fun Facts</h2>
+<p>Le tatouage de Michael prenait plus de 4 heures à appliquer chaque jour de tournage !</p>
+<p>La prison de Fox River utilisée dans la saison 1 est une vraie prison désaffectée dans l’Illinois.</p>
+<p>Dominic Purcell (Lincoln) s’est réellement blessé sur le tournage de la saison 5.</p>
+<p>Le personnage de T-Bag est inspiré d’un vrai criminel.</p>
+
+
+<h2>🎥 Trailer</h2>
+<video width="600" controls>
+  <source src="trailer_prison_break.mp4" type="video/mp4">
+  Ton navigateur ne supporte pas la lecture de vidéos.
+</video>
+
+
+
+
+
+
+<h2>🤔 Ton personnage préféré ?</h2>
+
+<form id="voteForm">
+  <input type="radio" name="fav" value="Michael" required> Michael Scofield<br>
+  <input type="radio" name="fav" value="Lincoln"> Lincoln Burrows<br>
+  <input type="radio" name="fav" value="T-Bag"> T-Bag<br>
+  <input type="radio" name="fav" value="Sucre"> Sucre<br><br>
+  <button type="submit">Voter</button>
+</form>
+
+
+<p id="confirmationMessage" style="display:none; color: #00ff99; font-weight: bold; margin-top: 20px;"></p>
+
+<script>
+  // Récupère le formulaire
+  document.getElementById("voteForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // pour pas recharger
+
+    // va prendre le choix de l'utilisateur 
+    const choix = document.querySelector('input[name="fav"]:checked').value;
+
+    // Message affiché
+    let message = "Merci pour ton vote !";
+
+    switch (choix) {
+      case "Michael":
+        message += " 🧠 Tu es un stratège né, calme, logique et toujours trois coups d’avance.";
+        break;
+      case "Lincoln":
+        message += " 💪 Tu es loyal, protecteur et prêt à tout pour les tiens, même quand ça chauffe.";
+        break;
+      case "T-Bag":
+        message += " 😈 Tu es imprévisible, manipulateur… mais charismatique. Tu caches bien ton jeu.";
+        break;
+      case "Sucre":
+        message += " ❤️ Tu es loyal, généreux et tu fais passer l’amour et l’amitié avant tout.";
+        break;
+    }
+
+    // Affiche le message
+    const confirmation = document.getElementById("confirmationMessage");
+    confirmation.style.display = "block";
+    confirmation.textContent = message;
+  });
+</script>
+
+
+
+<h2>📺 Quelle est ta saison préférée de Prison Break ?</h2>
+
+<form id="seasonForm">
+  <input type="radio" name="season" value="S1" required> Saison 1<br>
+  <input type="radio" name="season" value="S2"> Saison 2<br>
+  <input type="radio" name="season" value="S3"> Saison 3<br>
+  <input type="radio" name="season" value="S4"> Saison 4<br>
+  <input type="radio" name="season" value="S5"> Saison 5<br><br>
+  <button type="submit">Voter</button>
+</form>
+
+<p id="seasonMessage" style="display:none; color: #00ff99; font-weight: bold; margin-top: 20px;"></p>
+
+<script>
+  document.getElementById("seasonForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const choix = document.querySelector('input[name="season"]:checked').value;
+    let message = "Merci pour ton vote !";
+
+    switch (choix) {
+      case "S1":
+        message += " 🔓 Tu aimes les débuts brillants, les plans ingénieux et les frissons d’une vraie évasion.";
+        break;
+      case "S2":
+        message += " 🏃 Tu préfères l’action, la tension constante et les courses-poursuites à travers le pays.";
+        break;
+      case "S3":
+        message += " 🔥 Tu es attiré par l'intensité, la survie en milieu hostile et les alliances risquées.";
+        break;
+      case "S4":
+        message += " 🧩 Tu adores les missions d’infiltration, les retournements de situation et les révélations.";
+        break;
+      case "S5":
+        message += " 💀 Tu es curieux, nostalgique et tu voulais savoir ce qu’il était vraiment arrivé à Michael.";
+        break;
+    }
+
+    const result = document.getElementById("seasonMessage");
+    result.style.display = "block";
+    result.textContent = message;
+  });
+</script>
+
+
+
+
+
+<h2>🔐 Dans quelle prison pourrais-tu survivre ?</h2>
+
+<form id="prisonForm">
+  <input type="radio" name="prison" value="FoxRiver" required> Fox River (USA)<br>
+  <input type="radio" name="prison" value="Sona"> Sona (Panama)<br>
+  <input type="radio" name="prison" value="Ogygia"> Ogygia (Yémen)<br>
+  <input type="radio" name="prison" value="Aucune"> Aucune, je tiendrais pas 24h !<br><br>
+  <button type="submit">Tester</button>
+</form>
+
+<p id="prisonMessage" style="display:none; color: #00ff99; font-weight: bold; margin-top: 20px;"></p>
+
+<script>
+  document.getElementById("prisonForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const choix = document.querySelector('input[name="prison"]:checked').value;
+    let message = "Résultat :";
+
+    switch (choix) {
+      case "FoxRiver":
+        message += " 🏢 Tu es méthodique, discret et malin. Fox River ne te fait pas peur, tu ferais profil bas et tu survivrais.";
+        break;
+      case "Sona":
+        message += " 🔥 Tu es un vrai dur à cuire. Dans Sona, tu imposerais le respect... ou tu prendrais le pouvoir.";
+        break;
+      case "Ogygia":
+        message += " 🌍 Tu es débrouillard, tu sais t’adapter même dans un environnement chaotique. Ogygia ? Tu t’en sors vivant.";
+        break;
+      case "Aucune":
+        message += " 🫣 Tu survivrais pas une demi-journée. Mieux vaut regarder *Prison Break* depuis ton canapé 😅";
+        break;
+    }
+
+    const result = document.getElementById("prisonMessage");
+    result.style.display = "block";
+    result.textContent = message;
+  });
+</script>
+
+
+
+
+
+<h2>💣 Quelle mission est faite pour toi ?</h2>
+
+<form id="missionForm">
+  <input type="radio" name="mission" value="Evasion" required> Planifier une évasion<br>
+  <input type="radio" name="mission" value="Infiltration"> Infiltrer la Compagnie<br>
+  <input type="radio" name="mission" value="Sabotage"> Saboter un réseau ennemi<br>
+  <input type="radio" name="mission" value="Hacker"> Pirater Scylla<br><br>
+  <button type="submit">Découvrir</button>
+</form>
+
+<p id="missionMessage" style="display:none; color: #00ff99; font-weight: bold; margin-top: 20px;"></p>
+
+<script>
+  document.getElementById("missionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const choix = document.querySelector('input[name="mission"]:checked').value;
+    let message = "Mission attribuée :";
+
+    switch (choix) {
+      case "Evasion":
+        message += " 🚨 Tu es un stratège de l’ombre. Chaque détail compte, et tu peux transformer une cellule en échappatoire.";
+        break;
+      case "Infiltration":
+        message += " 🕶️ Tu es un caméléon. Tu sais jouer un rôle, gagner la confiance… et frapper au bon moment.";
+        break;
+      case "Sabotage":
+        message += " 💥 Tactique et imprévisible, tu agis vite et fort. Une mission discrète ? Très peu pour toi.";
+        break;
+      case "Hacker":
+        message += " 💻 Tu es le cerveau numérique de l’équipe. Pas besoin d’armes : ton clavier est ton arme fatale.";
+        break;
+    }
+
+    const result = document.getElementById("missionMessage");
+    result.style.display = "block";
+    result.textContent = message;
+  });
+</script>
+
+
+
+
+
+<h2>🔐 Quel lieu de Prison Break te ressemble ?</h2>
+
+<form id="lieuForm">
+  <input type="radio" name="lieu" value="Fox River" required> Fox River<br>
+  <input type="radio" name="lieu" value="Sona"> Sona<br>
+  <input type="radio" name="lieu" value="Compagnie"> Le siège de la Compagnie<br>
+  <input type="radio" name="lieu" value="Safehouse"> Une planque secrète<br><br>
+  <button type="submit">Révéler</button>
+</form>
+
+<p id="lieuMessage" style="display:none; color: #00ff99; font-weight: bold; margin-top: 20px;"></p>
+
+<script>
+  document.getElementById("lieuForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const choix = document.querySelector('input[name="lieu"]:checked').value;
+    let message = "🏠 Ton lieu est : ";
+
+    switch (choix) {
+      case "Fox River":
+        message += "🔒 Tu es organisé, méthodique et à l’aise sous pression. Tu thrives là où les autres paniquent.";
+        break;
+      case "Sona":
+        message += "🔥 Tu es brut, imprévisible, et tu t’adaptes à tout. Rien ne t’effraie, même le chaos.";
+        break;
+      case "Compagnie":
+        message += "🧠 Tu tires les ficelles dans l’ombre. Calculateur, discret, tu as toujours un plan caché.";
+        break;
+      case "Safehouse":
+        message += "🕳️ Tu es calme, prudent et loyal. Tu protèges ceux que tu aimes dans l’ombre.";
+        break;
+    }
+
+    const result = document.getElementById("lieuMessage");
+    result.style.display = "block";
+    result.textContent = message;
+  });
+</script>
+
+
+
+
+
+
+
+
+
+<hr>
+<h2>📬 Contacte la Fanzone</h2>
+
+<form id="contactForm" style="max-width: 500px; margin: auto; text-align: left;">
+  <label for="nom">Nom :</label><br>
+  <input type="text" id="nom" name="nom" required><br><br>
+
+  <label for="prenom">Prénom :</label><br>
+  <input type="text" id="prenom" name="prenom" required><br><br>
+
+  <label for="email">Email :</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="sujet">Sujet :</label><br>
+  <select id="sujet" name="sujet">
+    <option value="fanzone">Fanzone</option>
+    <option value="personnages">Personnages</option>
+    <option value="saisons">Saisons</option>
+    <option value="autre">Autre</option>
+  </select><br><br>
+
+  <label for="message">Message :</label><br>
+  <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+  <button type="submit">Envoyer</button>
+</form>
+
+
+<p id="confirmationContact" style="display:none; color: #00ff99; font-weight: bold; text-align: center; margin-top: 20px;"></p>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche l'envoi réel du formulaire vu que c'est juste un test
+
+   
+    const message = document.getElementById("confirmationContact");
+    message.style.display = "block";
+    message.textContent = "✅ Nous avons bien reçu votre message et vous répondrons dans les plus brefs délais.";
+
+    // Réinitialiser le formulaire :
+    Document.getElementById("contactForm").reset();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+}
+
+
+nav {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #868b90;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #1a1a2e;
+  text-decoration: underline;
+}
+
+
+.personnage, .saison {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-container img,
+img {
+  width: 300px;
+  border-radius: 10px;
+  max-width: 90%;
+  height: auto;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+
+form {
+  margin: 20px auto;
+  padding: 10px;
+  text-align: left;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #00ff99;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #00cc77;
+}
+
+hr {
+  margin: 40px auto;
+  width: 80%;
+  border: 1px solid #555;
+}
+
+
+#confirmationMessage,
+#seasonMessage,
+#prisonMessage,
+#missionMessage,
+#lieuMessage,
+#confirmationContact {
+  color: #00ff99;
+  font-weight: bold;
+  margin-top: 20px;
+  display: none;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+  nav a {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+  }
+
+  .image-container img,
+  img,
+  video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* Accueil */
+body.accueil {
+  background-image: url("prison.jpg");
+}
+
+/* Personnages */
+body.personnages {
+  background-image: url("personnages.jpg");
+}
+
+/* Saisons */
+body.saisons {
+  background-image: url("personnages.jpg"); 
+}
+
+/* Fanzone */
+body.fanzone {
+  background-image: url("personnages.jpg"); 
+}
+
+
+body.accueil,
+body.personnages,
+body.saisons,
+body.fanzone {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
